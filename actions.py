@@ -25,13 +25,23 @@ class ActionValidateLocation(Action):
         loc = tracker.get_slot('location')
         city_matched = False
         corr_city = ""
-        f = open("data/lookup_location.txt", "r", encoding='latin1')
+        print("action_validate_location called!")
+        #Checking for Tier1 city first
+        f = open("data/Locations/tier1.txt", "r", encoding='latin1')
         for line in f.readlines():
             city = str(line.strip().lower())
             if city == str(loc).lower():
                  city_matched = True
                  corr_city = str(line.strip())
-                
+        # Then look for Tier2 cities
+        if city_matched==False:
+            f = open("data/Locations/tier2.txt", "r", encoding='latin1')
+            for line in f.readlines():
+                city = str(line.strip().lower())
+                if city == str(loc).lower():
+                    city_matched = True
+                    corr_city = str(line.strip())
+
         if city_matched:
             return [SlotSet('valid_location',True), SlotSet('location',corr_city)]
         else:
@@ -44,6 +54,7 @@ class ActionValidateCuisine(Action):
 
     def run(self, dispatcher, tracker, domain):
         user_cuisine = tracker.get_slot('cuisine')
+        print(user_cuisine)
         cuisines_list=['American', 'Chinese', 'Italian', 'Mexican', 'North Indian', 'South Indian']
         if user_cuisine in cuisines_list:
             return [SlotSet('valid_cuisine',True), SlotSet('cuisine',user_cuisine)]
@@ -100,7 +111,7 @@ class ActionSendEmail(Action):
         
         if len(res) == 0:
             # Construct the email 'subject' and the contents.
-            d_email_msg = "Hi there! \n Sorry, something went wrong and we could not get you your list \n Best regards, \n Foodie Bot" 
+            d_email_msg = "Hi there! \n Sorry, something went wrong and we could not get you your list." 
         else:
             d_email_msg = "Hi there! Here are the " + d_email_subj + "." + "\n" + "\n" +"\n"
             count = 0

@@ -1,0 +1,1002 @@
+version: "2.0"
+stories:
+- story: story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_no_entity
+  - action: utter_ask_location
+  - intent: location_only
+    entities:
+    - location: bengaluru
+  - slot_was_set:
+    - location: Bangalore
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Bangalore
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '300'
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Bangalore
+  - action: utter_email_option
+  - intent: affirm_email
+    entities:
+    - email: A@b.com
+  - slot_was_set:
+    - email: A@b.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location
+    entities:
+    - location: Rishikesh
+  - slot_was_set:
+    - location: Rishikesh
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: false
+  - slot_was_set:
+    - location: None
+  - action: utter_ask_location_again
+  - intent: location_only
+    entities:
+    - location: allahabad
+  - slot_was_set:
+    - location: allahabad
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Allahabad
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Chinese
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '700'
+  - slot_was_set:
+    - budget_min: '700'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '700'
+  - slot_was_set:
+    - budget_max: '10000'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Allahabad
+  - action: utter_email_option
+  - intent: affirm_email
+    entities:
+    - email: xyz-1123@rediffmail.com
+  - slot_was_set:
+    - email: xyz-1123@rediffmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location
+    entities:
+    - location: calcutta
+  - slot_was_set:
+    - location: Kolkata
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Kolkata
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Mexican
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_max: '300'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '0'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Kolkata
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: _zxy123_@yahoo.com
+  - slot_was_set:
+    - email: _zxy123_@yahoo.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_no_entity
+  - action: utter_ask_location
+  - intent: location_only
+    entities:
+    - location: near me
+  - slot_was_set:
+    - location: near me
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: false
+  - slot_was_set:
+    - location: None
+  - action: utter_ask_location_again
+  - intent: location_only
+    entities:
+    - location: nagpur
+  - slot_was_set:
+    - location: Nagpur
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Nagpur
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '300'
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Nagpur
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: gg-pg@yahho.co.in
+  - slot_was_set:
+    - email: gg-pg@yahho.co.in
+  - action: action_send_email
+  - action: utter_goodbye
+- story: story_5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - location: Bokaro Steel City
+    - cuisine: chines
+  - slot_was_set:
+    - location: Bokaro Steel City
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Bokaro Steel City
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_max: '300'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '0'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Bokaro Steel City
+  - action: utter_email_option
+  - intent: negative
+  - action: utter_goodbye
+- story: story_6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location_budget
+    entities:
+    - location: noida
+    - budget_max: '1000'
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - budget_max: '1000'
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Pune
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '701'
+  - slot_was_set:
+    - budget_max: '10000'
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Pune
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: a-b@google.com
+  - slot_was_set:
+    - email: a-b@google.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - cuisine: japanese
+    - location: noida
+  - slot_was_set:
+    - cuisine: japanese
+  - slot_was_set:
+    - location: noida
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Noida
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: false
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Mexican
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '300'
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_min: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Noida
+  - action: utter_email_option
+  - intent: affirm_email
+    entities:
+    - email: a-x@nl.edu
+  - slot_was_set:
+    - email: a-x@nl.edu
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - cuisine: egyptian
+    - location: chennai
+  - slot_was_set:
+    - cuisine: egyptian
+  - slot_was_set:
+    - location: chennai
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Chennai
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: false
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_budget
+  - intent: restaurant_search_cuisine_budget
+    entities:
+    - budget_max: '300'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '0'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Chennai
+  - action: utter_email_option
+  - intent: negative
+  - action: utter_goodbye
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+    - location: hyderabad
+    - budget_max: '500'
+  - slot_was_set:
+    - budget_max: '500'
+  - slot_was_set:
+    - cuisine: Italian
+  - slot_was_set:
+    - location: hyderabad
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Hyderabad
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Hyderabad
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: fal2email@rdx.fr
+  - slot_was_set:
+    - email: fal2email@rdx.fr
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '300'
+    - budget_max: '600'
+  - slot_was_set:
+    - budget_max: '600'
+  - slot_was_set:
+    - budget_min: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: utter_ask_location
+  - intent: location_only
+    entities:
+    - location: rajahmundry
+  - slot_was_set:
+    - location: rajahmundry
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Rajahmundry
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Rajahmundry
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: 9@10.com
+  - slot_was_set:
+    - email: 9@10.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_5
+  steps:
+  - intent: restaurant_search_budget
+    entities:
+    - budget_max: '600'
+  - slot_was_set:
+    - budget_max: '600'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: '300'
+  - slot_was_set:
+    - budget_max: '700'
+  - action: utter_ask_location
+  - intent: location_only
+    entities:
+    - location: salem
+  - slot_was_set:
+    - location: salem
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Salem
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Chinese
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Salem
+  - action: utter_email_option
+  - intent: negative
+  - action: utter_goodbye
+- story: interactive_story_6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - cuisine: Italian
+    - location: Delhi
+  - slot_was_set:
+    - cuisine: Italian
+  - slot_was_set:
+    - location: Delhi
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Delhi
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '300'
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_min: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 300
+  - slot_was_set:
+    - budget_max: 700
+  - action: action_search_restaurants
+  - action: utter_email_option
+  - intent: affirm_email
+    entities:
+    - email: a123@234.co.sg
+  - slot_was_set:
+    - email: a123@234.co.sg
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_7
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - cuisine: Chinese
+    - location: Delhi
+  - slot_was_set:
+    - cuisine: Chinese
+  - slot_was_set:
+    - location: Delhi
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Delhi
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '300'
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_min: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 300
+  - slot_was_set:
+    - budget_max: 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Delhi
+  - action: utter_email_option
+  - intent: negative
+  - action: utter_goodbye
+- story: interactive_story_8
+  steps:
+  - intent: restaurant_search_location
+    entities:
+    - location: rishikesh
+  - slot_was_set:
+    - location: rishikesh
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: false
+  - slot_was_set:
+    - location: null
+  - action: utter_ask_location_again
+  - intent: location_only
+    entities:
+    - location: Moradabad
+  - slot_was_set:
+    - location: Moradabad
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Moradabad
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: utter_ask_budget
+  - intent: restaurant_search_cuisine_budget
+    entities:
+    - budget_max: '300'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 0
+  - slot_was_set:
+    - budget_max: 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Moradabad
+  - action: utter_email_option
+  - intent: negative
+  - action: utter_goodbye
+- story: interactive_story_9
+  steps:
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - cuisine: Chinese
+    - location: Jaipur
+  - slot_was_set:
+    - cuisine: Chinese
+  - slot_was_set:
+    - location: Jaipur
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Jaipur
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '300'
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_max: '700'
+  - slot_was_set:
+    - budget_min: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 300
+  - slot_was_set:
+    - budget_max: 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Jaipur
+  - action: utter_email_option
+  - intent: affirm_email
+    entities:
+    - email: subhabrata_ghosh@rediffmail.com
+  - slot_was_set:
+    - email: subhabrata_ghosh@rediffmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search_location
+    entities:
+    - location: Chandigarh
+  - slot_was_set:
+    - location: Chandigarh
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Chandigarh
+  - action: utter_ask_cuisine
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Chinese
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search_cuisine_budget
+    entities:
+    - budget_max: '300'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 0
+  - slot_was_set:
+    - budget_max: 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Chandigarh
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: anushavemuri@gmail.com
+  - slot_was_set:
+    - email: anushavemuri@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - cuisine: American
+    - location: Delhi
+  - slot_was_set:
+    - cuisine: American
+  - slot_was_set:
+    - location: Delhi
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Delhi
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: American
+  - action: utter_ask_budget
+  - intent: restaurant_search_cuisine_budget
+    entities:
+    - budget_max: '300'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 0
+  - slot_was_set:
+    - budget_max: 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Delhi
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: anushavemuri@gmail.com
+  - slot_was_set:
+    - email: anushavemuri@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search_location_cuisine
+    entities:
+    - cuisine: Chinese
+    - location: chandigarh
+  - slot_was_set:
+    - cuisine: Chinese
+  - slot_was_set:
+    - location: chandigarh
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Chandigarh
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search_cuisine_budget
+    entities:
+    - budget_max: '300'
+  - slot_was_set:
+    - budget_max: '300'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 0
+  - slot_was_set:
+    - budget_max: 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Chandigarh
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: anushavemuri@gmail.com
+  - slot_was_set:
+    - email: anushavemuri@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_cuisine
+    entities:
+    - cuisine: Mexican
+  - slot_was_set:
+    - cuisine: Mexican
+  - action: utter_ask_location
+  - intent: location_only
+    entities:
+    - location: chennai
+  - slot_was_set:
+    - location: chennai
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Chennai
+  - action: utter_ask_budget
+  - intent: restaurant_search_budget
+    entities:
+    - budget_min: '700'
+  - slot_was_set:
+    - budget_min: '700'
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 701
+  - slot_was_set:
+    - budget_max: 10000
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Chennai
+  - action: utter_email_option
+  - intent: affirm_email
+    entities:
+    - email: subhabrata_ghosh@rediffmail.com
+  - slot_was_set:
+    - email: subhabrata_ghosh@rediffmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_cuisine_budget
+    entities:
+    - cuisine: Italian
+    - budget_max: '600'
+  - slot_was_set:
+    - budget_max: '600'
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 300
+  - slot_was_set:
+    - budget_max: 700
+  - action: utter_ask_location
+  - intent: location_only
+  - action: utter_ask_location_again
+  - intent: location_only
+    entities:
+    - location: Mumbai
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Mumbai
+  - action: utter_email_option
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm_email
+    entities:
+    - email: subhabrata_ghosh@rediffmail.com
+  - slot_was_set:
+    - email: subhabrata_ghosh@rediffmail.com
+  - action: action_send_email
+  - action: utter_goodbye

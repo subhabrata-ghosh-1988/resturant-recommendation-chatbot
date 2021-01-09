@@ -1,3 +1,4 @@
+version: "2.0"
 actions:
 - action_greet
 - action_search_restaurants
@@ -36,8 +37,6 @@ intents:
 - restaurant_search_no_entity
 - restaurant_search_location_budget
 - goodbye
-- out_of_scope:
-    triggers: utter_out_of_scope
 responses:
   utter_ask_budget:
   - buttons:
