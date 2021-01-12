@@ -220,8 +220,8 @@ nlu:
     - Rs. [300](budget_min) to [700](budget_max)
     - Lesser than Rs. [300](budget_max)
     - More than [700](budget_min)
-    - <[2,50]{"entity": "budget_max", "value": "250"}
-    - >[8,00]{"entity": "budget_min", "value": "800"}
+    - <[250](budget_max)
+    - >[800](budget_min)
 - intent: restaurant_search_location_cuisine
   examples: |
     - show me [chines]{"entity": "cuisine", "value": "Chinese"} restaurants in [New Delhi]{"entity": "location", "value": "Delhi"}
@@ -248,6 +248,7 @@ nlu:
     - what restaurants would fit my budget of [200](budget_max) rs in [Allahabad](location)?
     - get me dinner options in [noida](location) for 4 people. budget more than [1000](budget_min)
     - show me family dining options for 3 in range [600](budget_min) to [1000](budget_max) in [jaipur]{"entity": "location", "value": "Jaipur"}
+    - I am looking for a [Chinese](cuisine) resturant in [Kolkata](location) with Budget between [450](budget_min) and [600](budget_max)
 - intent: restaurant_search_cuisine_budget
   examples: |
     - for budget [999](budget_max) rs show me [chines]{"entity": "cuisine", "value": "Chinese"} restaurants

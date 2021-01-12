@@ -765,7 +765,7 @@ stories:
     - email: subhabrata_ghosh@rediffmail.com
   - action: action_send_email
   - action: utter_goodbye
-- story: interactive_story_1
+- story: interactive_story_10
   steps:
   - intent: restaurant_search_location
     entities:
@@ -814,7 +814,7 @@ stories:
     - email: anushavemuri@gmail.com
   - action: action_send_email
   - action: utter_goodbye
-- story: interactive_story_1
+- story: interactive_story_11
   steps:
   - intent: restaurant_search_location_cuisine
     entities:
@@ -860,7 +860,7 @@ stories:
     - email: anushavemuri@gmail.com
   - action: action_send_email
   - action: utter_goodbye
-- story: interactive_story_1
+- story: interactive_story_12
   steps:
   - intent: restaurant_search_location_cuisine
     entities:
@@ -906,7 +906,7 @@ stories:
     - email: anushavemuri@gmail.com
   - action: action_send_email
   - action: utter_goodbye
-- story: interactive_story_1
+- story: interactive_story_13
   steps:
   - intent: greet
   - action: utter_greet
@@ -950,7 +950,7 @@ stories:
     - email: subhabrata_ghosh@rediffmail.com
   - action: action_send_email
   - action: utter_goodbye
-- story: interactive_story_1
+- story: interactive_story_14
   steps:
   - intent: greet
   - action: utter_greet
@@ -998,5 +998,51 @@ stories:
     - email: subhabrata_ghosh@rediffmail.com
   - slot_was_set:
     - email: subhabrata_ghosh@rediffmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: interactive_story_15
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search_location_budget
+    entities:
+    - cuisine: Chinese
+    - location: Kolkata
+    - budget_min: '450'
+    - budget_max: '600'
+  - slot_was_set:
+    - budget_max: '600'
+  - slot_was_set:
+    - budget_min: '450'
+  - slot_was_set:
+    - cuisine: Chinese
+  - slot_was_set:
+    - location: Kolkata
+  - action: action_validate_location
+  - slot_was_set:
+    - valid_location: true
+  - slot_was_set:
+    - location: Kolkata
+  - action: action_validate_cuisine
+  - slot_was_set:
+    - valid_cuisine: true
+  - slot_was_set:
+    - cuisine: Chinese
+  - action: action_validate_budget
+  - slot_was_set:
+    - valid_budget: true
+  - slot_was_set:
+    - budget_min: 300
+  - slot_was_set:
+    - budget_max: 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Kolkata
+  - action: utter_email_option
+  - intent: affirm_email
+    entities:
+    - email: subhabrata.ghosh.ju@gmail.com
+  - slot_was_set:
+    - email: subhabrata.ghosh.ju@gmail.com
   - action: action_send_email
   - action: utter_goodbye
