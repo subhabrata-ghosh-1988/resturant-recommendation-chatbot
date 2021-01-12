@@ -76,6 +76,10 @@ class ActionValidateBudget(Action):
             budget_max = float(str(tracker.get_slot('budget_max')))
         else:
             budget_max = 0
+
+        print(budget_min)
+        print(budget_max)
+
         if (budget_min == 0 and budget_max == 0):
             return [SlotSet('valid_budget',False), SlotSet('budget_min',None), SlotSet('budget_max',None) ]
         else:
@@ -124,7 +128,7 @@ class ActionSendEmail(Action):
         # Open SMTP connection to our email id.
         s = smtplib.SMTP("smtp.gmail.com", 587)
         s.starttls()
-        s.login("rasachatbot42020@gmail.com", "acodhdkkugyjgbrz")
+        s.login("foodie.2021.MLC18@gmail.com", "Welcome#2")
         # Create the msg object
         msg = EmailMessage()
         # Fill in the message properties

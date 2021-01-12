@@ -13,8 +13,8 @@ class SearchRestaurant:
         Returns a list (max 100) of Restaurants matching the input criteria.
         NOTE: This function makes use of Zomatopy library
         """
-        #config={ "user_key":"f4924dc9ad672ee8c4f8c84743301af5"}
-        config = {"user_key" : "242450b002b87fd3ce43979ceb8ddd72"}
+    
+        config = {"user_key" : "6bb9a42fda572d73004199cdd94a6238"}
         zomato = zomatopy.initialize_app(config)
         
         cuisines_dict={'American': 1, 'Chinese':25, 'Italian':55, 'Mexican':73, 'North Indian':50, 'South Indian':85}
@@ -41,6 +41,9 @@ class SearchRestaurant:
                 temp.append(restaurant['restaurant']['average_cost_for_two'])
                 search_res.append(temp)
         
+        print('search resturant '+str(budget_min))
+        print('serach resturant '+str(budget_max))
+
         #From above search results, select only those that have avg cost for 2 persons between budget_min & budget_max
         final_res = [x for x in search_res if budget_min <= x[3] <= budget_max]
         

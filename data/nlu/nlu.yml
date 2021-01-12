@@ -220,6 +220,8 @@ nlu:
     - Rs. [300](budget_min) to [700](budget_max)
     - Lesser than Rs. [300](budget_max)
     - More than [700](budget_min)
+    - <[2,50]{"entity": "budget_max", "value": "250"}
+    - >[8,00]{"entity": "budget_min", "value": "800"}
 - intent: restaurant_search_location_cuisine
   examples: |
     - show me [chines]{"entity": "cuisine", "value": "Chinese"} restaurants in [New Delhi]{"entity": "location", "value": "Delhi"}
