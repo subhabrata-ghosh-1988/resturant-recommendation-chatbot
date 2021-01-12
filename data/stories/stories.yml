@@ -53,6 +53,7 @@ stories:
   - slot_was_set:
     - email: A@b.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: story_2
   steps:
@@ -113,6 +114,7 @@ stories:
   - slot_was_set:
     - email: xyz-1123@rediffmail.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: story_3
   steps:
@@ -164,6 +166,7 @@ stories:
   - slot_was_set:
     - email: _zxy123_@yahoo.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: story_4
   steps:
@@ -231,6 +234,7 @@ stories:
   - slot_was_set:
     - email: gg-pg@yahho.co.in
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: story_5
   steps:
@@ -272,6 +276,7 @@ stories:
     - location: Bokaro Steel City
   - action: utter_email_option
   - intent: negative
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: story_6
   steps:
@@ -320,6 +325,7 @@ stories:
   - slot_was_set:
     - email: a-b@google.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_1
   steps:
@@ -380,6 +386,7 @@ stories:
   - slot_was_set:
     - email: a-x@nl.edu
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_2
   steps:
@@ -432,6 +439,7 @@ stories:
     - location: Chennai
   - action: utter_email_option
   - intent: negative
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_3
   steps:
@@ -477,6 +485,7 @@ stories:
   - slot_was_set:
     - email: fal2email@rdx.fr
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_4
   steps:
@@ -531,6 +540,7 @@ stories:
   - slot_was_set:
     - email: 9@10.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_5
   steps:
@@ -573,6 +583,7 @@ stories:
     - location: Salem
   - action: utter_email_option
   - intent: negative
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_6
   steps:
@@ -620,6 +631,7 @@ stories:
   - slot_was_set:
     - email: a123@234.co.sg
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_7
   steps:
@@ -664,6 +676,7 @@ stories:
     - location: Delhi
   - action: utter_email_option
   - intent: negative
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_8
   steps:
@@ -717,6 +730,7 @@ stories:
     - location: Moradabad
   - action: utter_email_option
   - intent: negative
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_9
   steps:
@@ -764,6 +778,7 @@ stories:
   - slot_was_set:
     - email: subhabrata_ghosh@rediffmail.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_10
   steps:
@@ -813,6 +828,7 @@ stories:
   - slot_was_set:
     - email: anushavemuri@gmail.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_11
   steps:
@@ -859,6 +875,7 @@ stories:
   - slot_was_set:
     - email: anushavemuri@gmail.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_12
   steps:
@@ -905,6 +922,7 @@ stories:
   - slot_was_set:
     - email: anushavemuri@gmail.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_13
   steps:
@@ -949,7 +967,8 @@ stories:
   - slot_was_set:
     - email: subhabrata_ghosh@rediffmail.com
   - action: action_send_email
-  - action: utter_goodbye
+  - action: action_slot_reset
+  - action: utter_goodbye  
 - story: interactive_story_14
   steps:
   - intent: greet
@@ -999,6 +1018,7 @@ stories:
   - slot_was_set:
     - email: subhabrata_ghosh@rediffmail.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
 - story: interactive_story_15
   steps:
@@ -1045,4 +1065,6 @@ stories:
   - slot_was_set:
     - email: subhabrata.ghosh.ju@gmail.com
   - action: action_send_email
+  - action: action_slot_reset
   - action: utter_goodbye
+  

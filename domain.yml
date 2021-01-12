@@ -16,6 +16,7 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_out_of_scope
+- action_slot_reset
 entities:
 - budget_max
 - budget_min

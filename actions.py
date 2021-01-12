@@ -16,6 +16,9 @@ d_email_rest=[]
 
 from rasa_sdk.events import UserUtteranceReverted
 
+#from rasa_core.events import AllSlotsReset
+#from rasa_core.events import Restarted
+
 class ActionValidateLocation(Action):
     """Revertible mapped action for action_validate_location"""
     def name(self):
@@ -26,6 +29,7 @@ class ActionValidateLocation(Action):
         city_matched = False
         corr_city = ""
         print("action_validate_location called!")
+        print(loc)
         #Checking for Tier1 city first
         f = open("data/Locations/tier1.txt", "r", encoding='latin1')
         for line in f.readlines():
@@ -77,8 +81,8 @@ class ActionValidateBudget(Action):
         else:
             budget_max = 0
 
-        print(budget_min)
-        print(budget_max)
+        print(tracker.get_slot('budget_min'))
+        print(tracker.get_slot('budget_max'))
 
         if (budget_min == 0 and budget_max == 0):
             return [SlotSet('valid_budget',False), SlotSet('budget_min',None), SlotSet('budget_max',None) ]
@@ -169,3 +173,11 @@ class ActionSearchRestaurants(Action):
                 response = response + "\n" + str(count) + ": " + x[0] + " in " + x[1] + " has been rated " + str(x[2])
         dispatcher.utter_message("-----"+response+"\n\n")
         return [SlotSet('location',loc)]
+
+class AllSlotsReset(Action):
+	def name(self):
+		return 'action_slot_reset'
+	def run(self, dispatcher, tracker, domain):
+			return[SlotSet('valid_budget',False), SlotSet('budget_min',None), SlotSet('budget_max',None),SlotSet('valid_cuisine',False), SlotSet('cuisine',None),SlotSet('valid_location',False), SlotSet('location',None)]
+
+  

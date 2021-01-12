@@ -266,7 +266,7 @@ nlu:
 - intent: out_of_scope
   examples: |
     - vnfneron lkdnlen
-- synonym: ' Allahabad'
+- synonym: Allahabad
   examples: |
     - illahabad
     - prayagraj
