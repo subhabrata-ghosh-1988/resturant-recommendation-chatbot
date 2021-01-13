@@ -1,0 +1,120 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- restaurant_search_cuisine
+- negative
+- restaurant_search_location_budget
+- location_only
+- restaurant_search_cuisine_budget
+- affirm_email
+- affirm
+- restaurant_search_budget
+- restaurant_search_location_cuisine
+- restaurant_search_location
+- restaurant_search
+- restaurant_search_no_entity
+- goodbye
+entities:
+- budget_max
+- budget_min
+- cuisine
+- email
+- location
+slots:
+  budget_max:
+    type: float
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  budget_min:
+    type: float
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  cuisine:
+    type: text
+    influence_conversation: true
+  email:
+    type: text
+    influence_conversation: true
+  location:
+    type: text
+    influence_conversation: true
+  valid_budget:
+    type: bool
+    influence_conversation: true
+  valid_cuisine:
+    type: bool
+    influence_conversation: true
+  valid_email:
+    type: bool
+    influence_conversation: true
+  valid_location:
+    type: bool
+    influence_conversation: true
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: Lesser than Rs. 300
+      title: Lesser than Rs. 300
+    - payload: Rs. 300 to 700
+      title: Rs. 300 to 700
+    - payload: More than 700
+      title: More than 700
+    text: What is your budget for 2 person?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    - payload: American
+      title: American
+    - payload: Mexican
+      title: Mexican
+    text: What cuisine would you prefer? Pick a choice
+  utter_ask_email:
+  - text: What is your email-id?
+  utter_ask_location:
+  - text: Ok, which city?
+  - text: Which city would you like me to find restaurants for you?
+  utter_ask_location_again:
+  - text: Sorry, either there is no such city or we don’t (yet) operate there. We operate in Tier 1 & Tier 2 cities in India only .Please try another city.
+  utter_default:
+  - text: Sorry, I do not understand that.
+  - text: I am sorry, but I can not understand that. Will you please rephrase?
+  utter_email_option:
+  - text: Should I send you details of all the restaurants on email?
+  utter_goodbye:
+  - text: Okay.
+  - text: Good bye.
+  - text: Bye-bye.
+  utter_greet:
+  - text: Hello there! How can I help you?
+  - text: Hi, how may I help you ?
+  utter_out_of_scope:
+  - text: Sorry, i do not understand that. Will you please rephrase?
+actions:
+- action_greet
+- action_search_restaurants
+- action_send_email
+- action_validate_budget
+- action_validate_cuisine
+- action_validate_location
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_email
+- utter_ask_location
+- utter_ask_location_again
+- utter_default
+- utter_email_option
+- utter_goodbye
+- utter_greet
+- utter_out_of_scope
+version: '2.0'

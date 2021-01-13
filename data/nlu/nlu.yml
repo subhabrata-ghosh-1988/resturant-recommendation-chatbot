@@ -219,9 +219,43 @@ nlu:
     - suggest sm good family dinner option. budget no issue
     - Rs. [300](budget_min) to [700](budget_max)
     - Lesser than Rs. [300](budget_max)
+    - Less than [300](budget_max)
+    - Lesser than [300](budget_max)
+    - our budget is more than [700](budget_min)
+    - Looking for some resturant where budget more than [1700](budget_min)
+    - We are ready to spend more than [300](budget_min)
+    - We would like to spend more than [1500](budget_min)
+    - we want to spent more than [700](budget_min)
+    - I am fine with budget more than [1700](budget_min)
+    - My budget is more than [300](budget_min)
+    - Budget is more than [1500](budget_min)
+    - Ok then please show me the resturant with budget more than [700](budget_min)
+    - more than [1700](budget_min)
+    - Please show me resturants.Budget more than [300](budget_min)
+    - total budget ismore than [1500](budget_min)
+    - Avg budget for two persons should be more than [700](budget_min)
+    - Looking for some very good resturant with budget more than [1700](budget_min)
+    - Looking for some excellent place with cost more than [300](budget_min)
+    - show me resturants.Budget more than [1500](budget_min)
+    - Show me some nearby places with budget more than [700](budget_min)
+    - Show me some places for dinner with budget more than [1700](budget_min)
+    - Show me some snacks joint out budget is more than [300](budget_min)
+    - show me some veg resturant with budget more than [1500](budget_min)
+    - show me some takeout places with budget more than [700](budget_min)
+    - total budget for dinner could be more than [1700](budget_min)
+    - show me some buffet place with budget more than [300](budget_min)
+    - More than [1500](budget_min)
     - More than [700](budget_min)
-    - <[250](budget_max)
-    - >[800](budget_min)
+    - More than [1700](budget_min)
+    - More than [300](budget_min)
+    - More than [1500](budget_min)
+    - Budget >[1250](budget_min)
+    - Our budget >[250](budget_min)
+    - total budget >[2250](budget_min)
+    - We want to spent >[2250](budget_min)
+    - >[2250](budget_min)
+    - Please find me some places.Budget >[2250](budget_min)
+    - <[250](budget_max)  
 - intent: restaurant_search_location_cuisine
   examples: |
     - show me [chines]{"entity": "cuisine", "value": "Chinese"} restaurants in [New Delhi]{"entity": "location", "value": "Delhi"}
@@ -247,6 +281,7 @@ nlu:
     - show me restaurants in [Rishikesh](location). budget [eight hundred] {"entity": "budget_max", "value": "800"} for 2 person.
     - what restaurants would fit my budget of [200](budget_max) rs in [Allahabad](location)?
     - get me dinner options in [noida](location) for 4 people. budget more than [1000](budget_min)
+    - i'm looking for a place in [Delhi](location) over 565(budget_min)
     - show me family dining options for 3 in range [600](budget_min) to [1000](budget_max) in [jaipur]{"entity": "location", "value": "Jaipur"}
     - I am looking for a [Chinese](cuisine) resturant in [Kolkata](location) with Budget between [450](budget_min) and [600](budget_max)
 - intent: restaurant_search_cuisine_budget

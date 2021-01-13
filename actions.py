@@ -110,7 +110,8 @@ class ActionSendEmail(Action):
         cuisine = tracker.get_slot('cuisine')
         budget_min = tracker.get_slot('budget_min')
         budget_max = tracker.get_slot('budget_max')
-        
+        print('action_send_email called!')
+        print(to_email)        
         sr = SearchRestaurant()
         global global_restrnt_srch_res
         res = sr.get_top10(global_restrnt_srch_res)
@@ -174,10 +175,3 @@ class ActionSearchRestaurants(Action):
         dispatcher.utter_message("-----"+response+"\n\n")
         return [SlotSet('location',loc)]
 
-class AllSlotsReset(Action):
-	def name(self):
-		return 'action_slot_reset'
-	def run(self, dispatcher, tracker, domain):
-			return[SlotSet('valid_budget',False), SlotSet('budget_min',None), SlotSet('budget_max',None),SlotSet('valid_cuisine',False), SlotSet('cuisine',None),SlotSet('valid_location',False), SlotSet('location',None)]
-
-  
